@@ -1,0 +1,40 @@
+
+public class Eercise {
+
+    public static void main(String[] args) {
+        String str1 = "MNO";
+        String str2 = "PQ";
+        String ques = "PMQNO";
+        System.out.println(checkInterleaved(str1, str2, ques));
+
+
+    }
+
+
+    private static boolean checkInterleaved(String str1, String str2, String CheckInString){
+        int i = 0, j = 0, k = 0;
+
+        if(str1.length() + str2.length() != CheckInString.length()){
+            return false;
+        }
+
+        while(k < CheckInString.length()){
+            if(i < str1.length() && str1.charAt(i) == CheckInString.charAt(k)){
+                i++;
+            } else if( j < str2.length() && str2.charAt(j) == CheckInString.charAt(k)){
+                j++;
+            } else {
+                return false;
+            }
+            k++;
+        }
+
+        if(!(str1.length() == i && j == str2.length() && k == CheckInString.length())){
+            return false;
+        }
+
+        return true;
+    }
+
+
+}
