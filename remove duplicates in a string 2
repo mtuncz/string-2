@@ -1,0 +1,29 @@
+public class Eercise {
+
+    public static void main(String[] args) {
+        String str1 = "w3resource";
+        long t1 = System.nanoTime();
+        System.out.println((removeDups(str1)));
+        long t2 = System.nanoTime();
+        System.out.println("It took: " + ((t2-t1)/1000) + " seconds");
+    }
+
+   
+    public static String removeDuplicateChars(String rsc){
+        char[] arr = rsc.toCharArray();
+        String target = "";
+
+        for(char val : arr){
+            if(target.indexOf(val) == -1){
+                target+=val;
+            }
+        }
+
+        return target;
+
+    }
+
+
+
+
+}
