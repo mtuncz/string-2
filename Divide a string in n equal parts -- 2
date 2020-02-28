@@ -1,0 +1,25 @@
+public class Eercise {
+
+    public static void main(String[] args) {
+        String str1 = "abcdefghijklmnopqrstuvwxy";
+        splitString(str1, 5);
+
+    }
+
+    public static void splitString(String str, int n){
+        int str_size = str.length();
+        int part_size;
+        if(str_size % n != 0){
+            System.out.println("Not divisible");
+        } else {
+            part_size = str_size / n;
+            for (int i = 0; i < str_size; i++) {
+                if (i % part_size == 0) {
+                    System.out.println();
+                }
+                System.out.print(str.charAt(i));
+            }
+        }
+    }
+    
+}
