@@ -1,0 +1,47 @@
+
+public class Eercise {
+
+    static int count = 0;
+
+    public static void main(String[] args) {
+        String str1 = "My high school, the Illinois Mathematics and Science Academy, showed me that anything is possible and that you're never too young to think big. At 15, I worked as a computer programmer at the Fermi National Accelerator Laboratory, or Fermilab. After graduating, I attended Stanford for a degree in economics and computer science.";
+        long t1 = System.currentTimeMillis();
+        maxChar(str1);
+        long t2 = System.currentTimeMillis();
+        System.out.println("Time took: " + (t2-t1));
+
+    }
+
+    public static void maxChar(String str){
+        int[] arr = count(str);
+        int maxIdx = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > maxIdx && str.charAt(i) != ' '){
+                maxIdx = i;
+            }
+        }
+
+
+        System.out.println("Max occuring char : " + str.charAt(maxIdx) + " appeared " + arr[maxIdx] + " times");
+
+    }
+
+    public static int[] count(String str){
+        int[] arr = new int[str.length()];
+
+        for(int i = 0; i < arr.length; i++){
+            char curr = str.charAt(i);
+            int count = 0;
+            for(int j = 0; j < str.length(); j++){
+                if(curr == str.charAt(j)){
+                    count++;
+                    arr[i] = count;
+                }
+            }
+        }
+
+        return arr;
+
+    }
+
+}
