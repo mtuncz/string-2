@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Eercise {
+
+    static int count = 0;
+
+    public static void main(String[] args) {
+        String str1 = "rabbit";
+        String str2 = "bribe";
+        String str3 = "dog";
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add(str1);
+        list.add(str2);
+        list.add(str3);
+
+        String check = "bib";
+
+        for(int i = 0; i < list.size(); i++){
+            String curr = list.get(i);
+            checkExistance(curr, check);
+        }
+
+    }
+
+    public static void checkExistance(String str, String check){
+        boolean flag = false;
+        String original = str;
+        for(int i = 0; i < check.length(); i++){
+            char curr = check.charAt(i);
+            for(int j = 0; j < str.length(); j++){
+                //System.out.println("Current string is: " + str);
+                if(str.indexOf(curr) != -1){
+                    int t = str.indexOf(curr);
+                    str = str.substring(t+1, str.length());
+                    flag = true;
+                }
+            }
+        }
+
+        if(flag){
+            System.out.println("Found: " + original);
+        }
+    }
+
+
+}
