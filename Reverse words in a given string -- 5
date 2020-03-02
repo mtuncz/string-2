@@ -1,0 +1,12 @@
+public class S_45 {
+    public static void main(String[] args) {
+        String str = "Reverse words in a given string";
+        System.out.println(reverseStr(str));
+    }
+
+    public static String reverseStr(String str){
+        StringBuilder sb = new StringBuilder(str);
+
+        return sb.reverse().toString();
+    }
+}
