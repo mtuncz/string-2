@@ -1,0 +1,17 @@
+public class S_44 {
+    public static void main(String[] args) {
+        reverse("michael jackson died yesterday at 9 am");
+
+    }
+
+    public static void reverse(String str){
+
+        if(str== null || str.length() <=1){
+            System.out.println(str);
+        } else {
+            System.out.print(str.charAt(str.length()-1));
+            str = str.substring(0, str.length()-1);
+            reverse(str);
+        }
+    }
+}
