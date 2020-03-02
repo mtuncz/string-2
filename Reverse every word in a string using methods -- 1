@@ -1,0 +1,20 @@
+public class S_46 {
+    public static void main(String[] args) {
+        String str = "The quick brown fox";
+        System.out.println(revWords(str));
+    }
+
+    public static String revWords(String str){
+        String[] arr = str.split(" ");
+        String res = "";
+        for(String tmp : arr){
+            StringBuilder rev = new StringBuilder(tmp);
+            tmp = rev.reverse().toString();
+            res += tmp + " ";
+        }
+
+        return res;
+
+
+    }
+}
