@@ -1,0 +1,23 @@
+public class S_45 {
+    public static void main(String[] args) {
+        String str = "fast";
+        System.out.println(reverseStr(str));
+    }
+
+    public static String reverseStr(String str){
+        StringBuilder sb = new StringBuilder(str);
+
+        String revStr = sb.reverse().toString();
+
+        String[] words = revStr.split(" ");
+        StringBuilder rev = new StringBuilder();
+        for(String tmp : words){
+            sb = new StringBuilder(tmp);
+            rev.append(sb.reverse() + " ");
+        }
+
+        rev.deleteCharAt(rev.length()-1);
+        return rev.toString();
+
+    }
+}
