@@ -1,0 +1,29 @@
+public class S_48 {
+    
+
+    public static void main(String[] args) {
+        String str = "abrambabasc";
+        removeSetOfChars(str);
+
+    }
+
+    public static void removeSetOfChars(String str){
+        int n = str.length(), i;
+        int ptr = 0;
+        char[] arr = str.toCharArray();
+        for(i = 0; i < n; i++){
+            if(arr[i] == 'b'){
+                continue;
+            } else if(i+1 < n && arr[i] == 'a' && arr[i+1] == 'c'){
+                i++;
+            } else {
+                arr[ptr++] = arr[i];
+            }
+            //System.out.println(Arrays.toString(arr));
+        }
+
+        char[] ret = Arrays.copyOfRange(arr, 0, ptr);
+        System.out.println(new String(ret));
+    }
+
+}
